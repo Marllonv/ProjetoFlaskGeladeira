@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Flask Geladeira</title>
+</head>
+<body>
+    <nav>
+        <a href="/index">Index</a> |
+        <a href="/geladeira">Geladeira</a> | 
+        <a href="/usuario">Usuário</a>
+    </nav>
+
+    {% block conteudo %}
+    {% endblock %}
+
+    <footer>
+        <h6>Site desenvolvido pela equipe mais foderástica desse Brasil.</h6>
+    </footer>
+
+</body>
+</html>
