@@ -1,5 +1,24 @@
 {% extends 'index.html' %}
 
     {% block conteudo %}
+
         <h2>Área da Geladeira</h2>
+
+        <form action="/itens">
+            <h3>Ver itens da geladeira</h3>
+            <button type="Submit">Ver Itens</button>
+        </form>
+        <div style="margin: 50px;">
+            {% for table in tables %}
+                {{titles[loop.index]}}
+                {{ table|safe }}
+            {% endfor %}
+        </div>
+        
+        {% if tabela %}
+            {% block sair %}
+            <form action="/geladeira"><button type="submit">Fechar</button></form>
+            {% endblock %}
+        {% endif %}
+        
     {% endblock %}

@@ -1,8 +1,26 @@
 {% extends 'index.html' %}
 
     {% block conteudo %}
-        <h1>
-            Entre seu usúario ou crie uma conta.
-        </h1>
-        
+        {% if logado == False %}
+        {% block login %}
+            {% with mensagens = get_flashed_messages() %}
+            <div class="login">
+                <form action="/autenticar" method="post">
+                    USUARIO: <input type="text" name="usuario"> <br/>
+                    SENHA: <input type="text" name="senha"> <br/>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+                {% if mensagens %}
+                    <div><h3 class="invalido">Usuário ou Senha Inválidos</h3></div>
+                {% endif %}
+            {% endwith %}
+        {% endblock %}
+        {% endif %}
+        {% if logado == True %}
+            <form action="/usuario">
+            <button>Sair da conta</button>
+            </form>
+        {% endif %}
+
     {% endblock %}

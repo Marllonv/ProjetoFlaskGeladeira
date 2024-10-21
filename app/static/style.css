@@ -2,3 +2,20 @@ h6 {
     font-size: 1rem;
     font-weight: bolder;
 }
+
+.login {
+    margin: 50px;
+}
+
+.login input {
+    margin-bottom: 20px;
+}
+
+.login input[name="senha"] {
+    margin-left: 18px;
+}
+
+.invalido {
+    color: red;
+    margin-left: 50px;
+}
