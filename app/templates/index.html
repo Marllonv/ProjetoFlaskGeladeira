@@ -3,21 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/CSS/style.css') }}">
+    {% block css %}
+    {% endblock %}
     <title>Flask Geladeira</title>
 </head>
 <body>
+    <header>
+        <h1 class="name">SmartBuy</h1>
     <nav>
-        <a href="/index">Index</a> |
-        <a href="/geladeira">Geladeira</a> | 
-        <a href="/usuario">Usuário</a>
+        <ul class="head">
+            <li><a href="/usuario" class="head">Usuário</a></li> 
+            <li><a href="/geladeira" class="head">Geladeira</a></li> 
+        </ul>
     </nav>
+</header>
 
+<section>
+
+
+<main>
+    <section class="content">
     {% block conteudo %}
-    {% endblock %}
 
+    {% endblock %}
+    </section>
+</main>
+</section>
     <footer>
-        <h6>Site desenvolvido pela equipe mais foderástica desse Brasil.</h6>
+        <div class="footer1">
+            <p>Encontre uma geladeira</p>
+            <p>Nossas redes sociais:</p>
+            <p>@SmartFridge05 - Instagram</p>
+            <p>SmartFridge - Facebook</p>
+        </div>
+        <div class="footer2">
+            <p>Ligue para uma Agencia:</p>
+            <p>+55 81 98745-4051 - Agencia Luquinhas</p>
+            <p>+55 81 9571-5072 - Agencia Parish</p>
+            <p>+55 81 8355-0923 - Agencia Maras</p>
+            <p>+55 81 9529-4654 - Agencia Miguelito</p>
+            <p>+55 81 9704-7055 - Agencia Jose.P</p>
+            
+        </div>
+        <div class="footer3">
+            <p>© Copyright 2024 SmartFridge</p>
+
+        </div>
     </footer>
 
 </body>

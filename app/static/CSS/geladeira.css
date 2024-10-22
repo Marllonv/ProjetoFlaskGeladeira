@@ -1,0 +1,23 @@
+.temperatura {
+    margin: 10px;
+}
+
+.see-btn, .close-btn {
+    padding: 10px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.see-btn:hover, .close-btn:hover {
+    background-color: yellow;
+}
+
+.temperatura {
+    margin-top: 40px;
+}
+
+.span-temp {
+    color: rgb(0, 81, 255);
+    font-weight: bolder;
+    font-size: 1.3rem;
+}

@@ -1,0 +1,23 @@
+.inputtxt {
+    margin-bottom: 20px;
+}
+
+input[name="senha"]{
+    margin-left: 10px;
+}
+
+.deslog-btn {
+    margin-top: 10px;
+}
+
+.login-btn, .deslog-btn button{
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.login-btn, .deslog-btn button:hover{
+    background-color: rgb(251, 255, 30);
+}

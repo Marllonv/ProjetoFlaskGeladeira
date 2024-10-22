@@ -1,0 +1,139 @@
+openapi: 3.0.0
+info:
+  title: Geladeira Inteligente - SmartBuy
+  version: 1.0.0
+  description: Documentação no formato Swagger para aplicação da SmartBuy
+paths:
+  /autenticar:
+    post:
+      summary: Autentica um usuário
+      description: Retorna sucesso ou falha na autenticação de um usuário com email senha.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: "usuario@example.com"
+                senha:
+                  type: string
+                  example: "senha123"
+      responses:
+        '200':
+          description: Sucesso no login
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+        '401':
+          description: Credenciais inválidas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Email ou senha inválidos."
+  /salvar-cartao:
+    post:
+      summary: Salva os dados de um cartão de crédito
+      description: Recebe as informações de um cartão e exibe em uma página de usuário.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                card-name:
+                  type: string
+                  example: "Nome do Titular"
+                card-num:
+                  type: string
+                  example: "1234 5678 9012 3456"
+                card-code:
+                  type: string
+                  example: "123"
+                card-date:
+                  type: string
+                  example: "12/25"
+      responses:
+        '200':
+          description: Cartão salvo com sucesso
+          content:
+            text/html:
+              schema:
+                type: string
+                example: "<table class='data'>...</table>"
+        '400':
+          description: Requisição inválida
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Dados do cartão são obrigatórios."
+  /usuario:
+    get:
+      summary: Retorna a página do usuário
+      description: Renderiza a página 'usuario.html' para o usuário, indicando que ele não está logado.
+      responses:
+        '200':
+          description: Página do usuário renderizada com sucesso
+          content:
+            text/html:
+              schema:
+                type: string
+                example: "<html>... conteúdo da página usuario.html ...</html>"
+  /itens:
+    get:
+      summary: Retorna a página de itens
+      description: Renderiza a página 'geladeira.html' com a tabela de itens.
+      responses:
+        '200':
+          description: Página de itens renderizada com sucesso
+          content:
+            text/html:
+              schema:
+                type: string
+                example: "<html>... conteúdo da página geladeira.html com a tabela de itens ...</html>"
+  /geladeira:
+    get:
+      summary: Retorna a página da geladeira
+      description: Renderiza a página 'geladeira.html'.
+      responses:
+        '200':
+          description: Página da geladeira renderizada com sucesso
+          content:
+            text/html:
+              schema:
+                type: string
+                example: "<html>... conteúdo da página geladeira.html ...</html>"
+  /index:
+    get:
+      summary: Retorna a página de usuário
+      description: Renderiza a página 'usuario.html' para o usuário, indicando que ele não está logado.
+      responses:
+        '200':
+          description: Página do usuário renderizada com sucesso
+          content:
+            text/html:
+              schema:
+                type: string
+                example: "<html>... conteúdo da página usuario.html ...</html>"

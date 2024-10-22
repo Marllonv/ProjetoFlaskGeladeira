@@ -1,0 +1,42 @@
+@import url(footer.css);
+@import url(header.css);
+@import url(main.css);
+
+
+
+
+h6 {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+body{
+    overflow-x: hidden;
+    /* padding: 50px; */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: url(../IMG/ed77dc7f-76a2-4281-b04f-c4fed84d9418.jpg);
+    opacity: 1;
+    background-color: black;
+    /* height: 200vh; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main{
+    width: 60vw;
+    border-radius: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid black;
+    justify-content: center;
+    justify-items: center;
+    background-color: white;
+}
+section{
+    display: grid;
+    width: 100%;
+    justify-content: center;
+}

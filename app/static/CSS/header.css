@@ -1,0 +1,35 @@
+header{
+  background-color: rgb(251, 255, 30);
+  width: 100vw;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 60vw 1fr;
+}
+header h1{
+  margin: 0;
+}
+header ul{
+ display: flex;
+ flex-wrap: wrap;
+ gap: 20px;
+
+}
+nav{
+  justify-self: center;
+ 
+}
+header li{
+  list-style: none; 
+}
+header li a:hover{
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  border-radius: 10px;
+}
+header a{
+  padding: 5px;
+  border-radius: 4px;
+  /* background-color: aliceblue; */
+  color: black;
+  text-decoration: none;
+}

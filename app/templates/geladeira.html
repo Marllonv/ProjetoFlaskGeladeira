@@ -1,24 +1,31 @@
 {% extends 'index.html' %}
 
+    {% block css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='/CSS/geladeira.css') }}">
+    {% endblock %}
+
     {% block conteudo %}
 
-        <h2>Área da Geladeira</h2>
+        <h2 class="title">Área da Geladeira</h2>
+
+        
 
         <form action="/itens">
-            <h3>Ver itens da geladeira</h3>
-            <button type="Submit">Ver Itens</button>
+            <h3>Ver itens da geladeira:</h3>
+            <button type="Submit" class="see-btn">Ver Itens</button>
         </form>
         <div style="margin: 50px;">
             {% for table in tables %}
-                {{titles[loop.index]}}
                 {{ table|safe }}
             {% endfor %}
         </div>
         
         {% if tabela %}
             {% block sair %}
-            <form action="/geladeira"><button type="submit">Fechar</button></form>
+            <form action="/geladeira"><button class="close-btn" type="submit">Fechar</button></form>
             {% endblock %}
         {% endif %}
+
+        <div class="temperatura">Temperatura atual: <span class="span-temp">{{temperatura}}C°</span></div>
         
     {% endblock %}

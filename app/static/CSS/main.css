@@ -1,0 +1,13 @@
+main {
+  height: 100vh;
+  position: relative;
+  padding-bottom: 100px; /* altura do rodapé */
+}
+
+.content {
+  margin-top: 50px;
+}
+
+.title {
+  font-size: 2rem;
+}
